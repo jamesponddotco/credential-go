@@ -1,0 +1,15 @@
+---
+image: 'archlinux'
+packages:
+  - 'go'
+  - 'make'
+sources:
+  - 'https://git.sr.ht/~jamesponddotco/credential-go'
+tasks:
+  - lint: |
+      cd credential-go
+      export PATH="${HOME}/go/bin:${PATH}"
+      make lint
+  - test: |
+      cd credential-go
+      make test
